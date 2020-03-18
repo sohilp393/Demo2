@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles
+  has_many :comments
   #By default it encrypts the column with name password.digest
   #has_secure_password :my_password will encrypt the column named my_password
   has_secure_password 

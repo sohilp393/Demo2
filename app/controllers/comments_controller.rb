@@ -2,14 +2,12 @@ class CommentsController < ApplicationController
 
 	def create
 		@article = Article.find(params[:article_id])
-		@comment = @article.comments.new(comment_params)
-		@comment.commenter = current_user.username
-		debugger
+		@comment = @article.comments.new(comment_params)		
+		@comment.user = current_user
 		if @comment.valid?
  			@comment.save
  			redirect_to article_path(@article)
  		else
- 			debugger
  			flash[:success] = "Something went wrong" 
  			redirect_to article_path(@article)
  			#render 'new'
