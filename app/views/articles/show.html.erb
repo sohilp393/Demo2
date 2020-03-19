@@ -36,7 +36,6 @@
 
    <% @article.comments.each do |comment| %>
    <h5> Comments :-</h5>
-   <% debugger %>
    <h6> <%= comment.user.username%>:-
    <%= @article.user.created_at %>  
    <%= comment.body %></h6><br>
